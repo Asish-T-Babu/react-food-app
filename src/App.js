@@ -1039,3 +1039,5 @@ export default AppLayout;
 // always  wehn ever you are doing a map, you have to give a key to the component
 
 // if we re mapping anything in jsx we need provide a key because if we want to render another component in any specific place the react couldn't understand where it need to render so it will render teh all component inside map something inside the 
+// don't use index of the array as a key for map fuction, it is not recommend by react
+// we can use the index as a key but it is not recommend but if the data doesn't contain a unique key then we can atleast provide the index as unique key but it is not recommended by react, provide a key for the component in the map function or something liike that, 
