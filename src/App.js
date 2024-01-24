@@ -990,7 +990,6 @@ const styleCard = {
 // controling the ui using backend (the ui is controlled by config and the config is the data from the api)
 
 const RestaurentCard = (props) =>{
-  console.log(props.data.info)
   const name = props.data.info.name
   const cuisines = props.data.info.cuisines
   return (
@@ -1011,7 +1010,7 @@ const Body = () =>{
       <div className='res-container'>
         {/* RestaurentCard */}
         {/* the resName and cuisine are arugument for RestaurentCard component(function) */}
-        {restaurants.map((items) => <RestaurentCard data={items} />)}
+        {restaurants.map((items) =>  <RestaurentCard key={items.info.id} data={items} />)}
         {/* <RestaurentCard resName="Meghana foods" cuisine='Biriyani, North Indian, Asian'/>
         <RestaurentCard resName="KFC" cuisine='Burger, Fast food'/> */}
       </div>
@@ -1035,3 +1034,8 @@ export default AppLayout;
 // I want to pass some data as dynamic for that we can use props
 
 // what is component - > it is normal javascript function and the props is the argument to the function
+
+
+// always  wehn ever you are doing a map, you have to give a key to the component
+
+// if we re mapping anything in jsx we need provide a key because if we want to render another component in any specific place the react couldn't understand where it need to render so it will render teh all component inside map something inside the 
